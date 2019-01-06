@@ -47,8 +47,7 @@ class WorkoutTableViewController: UITableViewController {
         
         let exercise = exercises[indexPath.row]
         
-        let youtubeURL = URL(string: "https://www.youtube.com/embed/r25IWquxe9s")
-        
+        let youtubeURL = URL(string: "https://www.youtube.com/embed/\(exercise.youtubeID)")
         
         cell.exerciseName.text = exercise.name
         cell.workoutVideoWebKit.load(URLRequest(url: youtubeURL!))
@@ -75,16 +74,16 @@ class WorkoutTableViewController: UITableViewController {
     // MARK: Private Methods
     
     private func loadExercises() {
-        guard let exercise1 = Exercise(name: "1) PUSH UPS!") else {
+        guard let exercise1 = Exercise(name: "1) PUSH UPS!", youtubeID: "r25IWquxe9s") else {
             fatalError("Unable to instantiate exercise1")
         }
-        guard let exercise2 = Exercise(name: "2) SQUAT") else {
+        guard let exercise2 = Exercise(name: "2) SQUAT", youtubeID: "r25IWquxe9s") else {
             fatalError("Unable to instantiate exersice2")
         }
-        guard let exercise3 = Exercise(name: "3) RUN") else {
+        guard let exercise3 = Exercise(name: "3) RUN", youtubeID: "r25IWquxe9s") else {
             fatalError("Unable to instantiate exersice2")
         }
-        guard let exercise4 = Exercise(name: "4) CRUNCH") else {
+        guard let exercise4 = Exercise(name: "4) CRUNCH", youtubeID: "r25IWquxe9s") else {
             fatalError("Unable to instantiate exersice2")
         }
         

@@ -12,12 +12,16 @@ class Exercise {
 
     //MARK: Properties
     var name: String
-//    var youtubeID: String
+    var youtubeID: String
     
     //MARK: Initialization
-    init?(name: String) {
+    init?(name: String, youtubeID: String) {
         guard !name.isEmpty else {
             return nil
         }
+        guard !youtubeID.isEmpty else {
+            return nil
+        }
         self.name = name
+        self.youtubeID = youtubeID
     }}
