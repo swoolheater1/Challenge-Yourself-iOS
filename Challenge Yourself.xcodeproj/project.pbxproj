@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A09F7C5F21E26053001FDE96 /* WorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F7C5E21E26053001FDE96 /* WorkoutTableViewController.swift */; };
+		A09F7C6121E26285001FDE96 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F7C6021E26285001FDE96 /* WorkoutTableViewCell.swift */; };
+		A09F7C6321E26321001FDE96 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F7C6221E26321001FDE96 /* Exercise.swift */; };
 		A0BD88C121D448A500406A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD88C021D448A500406A91 /* AppDelegate.swift */; };
-		A0BD88C321D448A500406A91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD88C221D448A500406A91 /* ViewController.swift */; };
 		A0BD88C621D448A500406A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BD88C421D448A500406A91 /* Main.storyboard */; };
 		A0BD88C821D448A900406A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0BD88C721D448A900406A91 /* Assets.xcassets */; };
 		A0BD88CB21D448A900406A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BD88C921D448A900406A91 /* LaunchScreen.storyboard */; };
@@ -34,9 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A09F7C5E21E26053001FDE96 /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewController.swift; sourceTree = "<group>"; };
+		A09F7C6021E26285001FDE96 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		A09F7C6221E26321001FDE96 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A0BD88BD21D448A500406A91 /* Challenge Yourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge Yourself.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BD88C021D448A500406A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0BD88C221D448A500406A91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0BD88C521D448A500406A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0BD88C721D448A900406A91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0BD88CA21D448A900406A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				A0BD88C021D448A500406A91 /* AppDelegate.swift */,
-				A0BD88C221D448A500406A91 /* ViewController.swift */,
+				A09F7C5E21E26053001FDE96 /* WorkoutTableViewController.swift */,
+				A09F7C6021E26285001FDE96 /* WorkoutTableViewCell.swift */,
+				A09F7C6221E26321001FDE96 /* Exercise.swift */,
 				A0BD88C421D448A500406A91 /* Main.storyboard */,
 				A0BD88C721D448A900406A91 /* Assets.xcassets */,
 				A0BD88C921D448A900406A91 /* LaunchScreen.storyboard */,
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0BD88C321D448A500406A91 /* ViewController.swift in Sources */,
 				A0BD88C121D448A500406A91 /* AppDelegate.swift in Sources */,
+				A09F7C6321E26321001FDE96 /* Exercise.swift in Sources */,
+				A09F7C6121E26285001FDE96 /* WorkoutTableViewCell.swift in Sources */,
+				A09F7C5F21E26053001FDE96 /* WorkoutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97ZQY67JVZ;
 				INFOPLIST_FILE = "Challenge Yourself/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97ZQY67JVZ;
 				INFOPLIST_FILE = "Challenge Yourself/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
