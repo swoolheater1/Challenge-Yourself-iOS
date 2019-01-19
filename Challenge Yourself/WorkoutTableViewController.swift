@@ -56,8 +56,17 @@ class WorkoutTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // open and close cells
         if indexPath.row == selectedRowIndex.row {
-            return 300
+            // guard protects random crash
+            guard let row = tableView.cellForRow(at: indexPath) else { return 50 }
+            let cellHeight = row.bounds.height
+            // close open cell
+            if cellHeight == 220 {
+                return 50
+            }
+            // open closed cell
+            return 220
         }
         return 50
     }
