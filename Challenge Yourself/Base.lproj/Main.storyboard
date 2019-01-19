@@ -80,7 +80,7 @@
         <!--Body By Beverly-->
         <scene sceneID="ykr-GO-2Su">
             <objects>
-                <viewController id="1gz-JQ-5rD" customClass="WorkoutContainerView" customModule="Challenge_Yourself" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1gz-JQ-5rD" customClass="WorkoutContainerViewController" customModule="Challenge_Yourself" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R4b-XR-orf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,35 +94,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU0-xJ-XEs">
                                 <rect key="frame" x="0.0" y="609" width="375" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGE-5l-nVo">
-                                        <rect key="frame" x="8" y="10" width="97" height="38"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGE-5l-nVo">
+                                        <rect key="frame" x="8" y="10" width="149" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-bs-GeB">
-                                        <rect key="frame" x="124" y="14" width="34" height="30"/>
+                                        <rect key="frame" x="165" y="14" width="34" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
-                                            <action selector="startTimer:" destination="1gz-JQ-5rD" eventType="touchUpInside" id="GYD-e0-gqV"/>
+                                            <action selector="startButtonTapped:" destination="1gz-JQ-5rD" eventType="touchUpInside" id="VOw-Vv-CcV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aI-yE-WyI">
-                                        <rect key="frame" x="179" y="14" width="42" height="30"/>
+                                        <rect key="frame" x="207" y="14" width="65" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Pause"/>
                                         <connections>
-                                            <action selector="pauseTimer:" destination="1gz-JQ-5rD" eventType="touchUpInside" id="pZQ-0Y-TGi"/>
+                                            <action selector="pauseButtonTapped:" destination="1gz-JQ-5rD" eventType="touchUpInside" id="zDc-bg-z0i"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5j-Ex-Bwf">
-                                        <rect key="frame" x="239" y="14" width="39" height="30"/>
+                                        <rect key="frame" x="280" y="14" width="39" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
-                                            <action selector="resetTimer:" destination="1gz-JQ-5rD" eventType="touchUpInside" id="vmt-hb-dxF"/>
+                                            <action selector="resetButtonTapped:" destination="1gz-JQ-5rD" eventType="touchUpInside" id="uq1-zl-bcM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -152,14 +152,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pauseButton" destination="0aI-yE-WyI" id="hpZ-qi-UsU"/>
-                        <outlet property="startButton" destination="G3v-bs-GeB" id="HHr-0O-9qf"/>
-                        <outlet property="timeLabel" destination="NGE-5l-nVo" id="iBV-q9-jcc"/>
+                        <outlet property="pauseButton" destination="0aI-yE-WyI" id="7EX-Yn-OrU"/>
+                        <outlet property="startButton" destination="G3v-bs-GeB" id="muq-hm-Odf"/>
+                        <outlet property="timerLabel" destination="NGE-5l-nVo" id="71A-x7-obW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWh-ht-OGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821.60000000000002" y="224.6305418719212"/>
+            <point key="canvasLocation" x="821.60000000000002" y="224.4377811094453"/>
         </scene>
     </scenes>
 </document>
