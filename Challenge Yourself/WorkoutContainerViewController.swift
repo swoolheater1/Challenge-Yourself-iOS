@@ -59,6 +59,8 @@ class WorkoutContainerViewController: UIViewController {
         isTimerRunning = false
         pauseButton.isEnabled = false
         startButton.isEnabled = true
+        self.resumeTapped = false
+        self.pauseButton.setTitle("Pause",for: .normal)
     }
     
     func runTimer() {
