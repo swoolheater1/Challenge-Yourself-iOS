@@ -73,20 +73,19 @@ class WorkoutContainerViewController: UIViewController {
         if seconds >= 360000 - 1{ // will stop timer before it gets to 100 hours
             timer.invalidate()
             pauseButton.isEnabled = false
-            //Send alert to indicate "time's up!"
         } else {
             seconds += 1
             timerLabel.text = timeString(time: TimeInterval(seconds))
         }
     }
     
+    // Format time
     func timeString(time:TimeInterval) -> String {
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
         
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
-        //return String(format:"%02i:%02i", minutes, seconds)
     }
     
     /*
