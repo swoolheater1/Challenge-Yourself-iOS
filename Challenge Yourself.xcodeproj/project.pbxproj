@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A074A6F6220F6EBE00092022 /* BioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A074A6F5220F6EBD00092022 /* BioTableViewCell.swift */; };
 		A09F7C5F21E26053001FDE96 /* WorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F7C5E21E26053001FDE96 /* WorkoutTableViewController.swift */; };
 		A09F7C6121E26285001FDE96 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F7C6021E26285001FDE96 /* WorkoutTableViewCell.swift */; };
 		A09F7C6321E26321001FDE96 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F7C6221E26321001FDE96 /* Exercise.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A074A6F5220F6EBD00092022 /* BioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioTableViewCell.swift; sourceTree = "<group>"; };
 		A09F7C5E21E26053001FDE96 /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewController.swift; sourceTree = "<group>"; };
 		A09F7C6021E26285001FDE96 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		A09F7C6221E26321001FDE96 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				A09F7C6421EAC0AD001FDE96 /* WorkoutContainerViewController.swift */,
 				A09F7C5E21E26053001FDE96 /* WorkoutTableViewController.swift */,
 				A09F7C6021E26285001FDE96 /* WorkoutTableViewCell.swift */,
+				A074A6F5220F6EBD00092022 /* BioTableViewCell.swift */,
 				A09F7C6221E26321001FDE96 /* Exercise.swift */,
 				A0BD88C421D448A500406A91 /* Main.storyboard */,
 				A0BD88C721D448A900406A91 /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A074A6F6220F6EBE00092022 /* BioTableViewCell.swift in Sources */,
 				A09F7C6521EAC0AD001FDE96 /* WorkoutContainerViewController.swift in Sources */,
 				A0BD88C121D448A500406A91 /* AppDelegate.swift in Sources */,
 				A09F7C6321E26321001FDE96 /* Exercise.swift in Sources */,

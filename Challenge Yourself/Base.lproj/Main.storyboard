@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MVa-Cr-uYi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MVa-Cr-uYi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +19,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BioTableViewCell" rowHeight="336" id="QFb-SN-A76" customClass="BioTableViewCell" customModule="Challenge_Yourself" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="336"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QFb-SN-A76" id="WvA-CZ-gvs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="335.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-73-I54">
+                                            <rect key="frame" x="16" y="11" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body By Beverly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G89-j6-PCd">
+                                            <rect key="frame" x="144" y="42" width="182" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="95n-T7-dtW">
+                                            <rect key="frame" x="16" y="129" width="343" height="201"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrucitons: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc3-WW-R9c">
+                                            <rect key="frame" x="16" y="109" width="105" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Bio" destination="95n-T7-dtW" id="UHH-Je-gDd"/>
+                                    <outlet property="contentView" destination="WvA-CZ-gvs" id="R4o-D0-bby"/>
+                                    <outlet property="instructions" destination="95n-T7-dtW" id="fQZ-yj-9nb"/>
+                                    <outlet property="profilePic" destination="pcg-73-I54" id="naP-KU-eKv"/>
+                                    <outlet property="trainerName" destination="G89-j6-PCd" id="tfm-bf-wYr"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutTableViewCell" rowHeight="229" id="Ujy-GL-tOA" customClass="WorkoutTableViewCell" customModule="Challenge_Yourself" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="229"/>
+                                <rect key="frame" x="0.0" y="364" width="375" height="229"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ujy-GL-tOA" id="Ywl-Iw-5wo">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="228.5"/>
@@ -57,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGk-Uj-6HQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050" y="225"/>
+            <point key="canvasLocation" x="2048.8000000000002" y="224.4377811094453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YH4-rQ-CDp">
@@ -77,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="-364" y="225"/>
         </scene>
-        <!--Body By Beverly-->
+        <!--Challenge Yourself-->
         <scene sceneID="ykr-GO-2Su">
             <objects>
                 <viewController id="1gz-JQ-5rD" customClass="WorkoutContainerViewController" customModule="Challenge_Yourself" customModuleProvider="target" sceneMemberID="viewController">
@@ -146,11 +189,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qy1-vX-qXw"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Body By Beverly" id="jLp-Gi-8sA">
-                        <barButtonItem key="rightBarButtonItem" title="Trainer" id="8Mc-YA-pBI">
-                            <color key="tintColor" red="0.87257856130599976" green="0.6152992844581604" blue="0.058957524597644806" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Challenge Yourself" id="jLp-Gi-8sA"/>
                     <connections>
                         <outlet property="pauseButton" destination="0aI-yE-WyI" id="7EX-Yn-OrU"/>
                         <outlet property="startButton" destination="G3v-bs-GeB" id="muq-hm-Odf"/>
@@ -162,4 +201,7 @@
             <point key="canvasLocation" x="821.60000000000002" y="224.4377811094453"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultProfilePic" width="546" height="546"/>
+    </resources>
 </document>
