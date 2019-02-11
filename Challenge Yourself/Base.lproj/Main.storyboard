@@ -14,10 +14,11 @@
         <scene sceneID="2fc-mA-hbu">
             <objects>
                 <tableViewController id="iaS-OZ-vsv" userLabel="Workout Table View Controller" customClass="WorkoutTableViewController" customModule="Challenge_Yourself" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yli-t7-t2E">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yli-t7-t2E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="563"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BioTableViewCell" rowHeight="336" id="QFb-SN-A76" customClass="BioTableViewCell" customModule="Challenge_Yourself" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="336"/>
@@ -26,7 +27,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="335.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-73-I54">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilePic" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-73-I54">
                                             <rect key="frame" x="16" y="11" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -54,29 +55,27 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="Bio" destination="95n-T7-dtW" id="UHH-Je-gDd"/>
-                                    <outlet property="contentView" destination="WvA-CZ-gvs" id="R4o-D0-bby"/>
                                     <outlet property="instructions" destination="95n-T7-dtW" id="fQZ-yj-9nb"/>
                                     <outlet property="profilePic" destination="pcg-73-I54" id="naP-KU-eKv"/>
                                     <outlet property="trainerName" destination="G89-j6-PCd" id="tfm-bf-wYr"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutTableViewCell" rowHeight="229" id="Ujy-GL-tOA" customClass="WorkoutTableViewCell" customModule="Challenge_Yourself" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="364" width="375" height="229"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutTableViewCell" rowHeight="253" id="Ujy-GL-tOA" customClass="WorkoutTableViewCell" customModule="Challenge_Yourself" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="364" width="375" height="253"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ujy-GL-tOA" id="Ywl-Iw-5wo">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="228.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="252.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krD-NC-TXD">
-                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                            <rect key="frame" x="16" y="7" width="343" height="28"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="il4-zU-zqR">
-                                            <rect key="frame" x="16" y="40" width="343" height="159"/>
+                                            <rect key="frame" x="16" y="43" width="343" height="159"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <wkWebViewConfiguration key="configuration">
@@ -202,6 +201,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultProfilePic" width="546" height="546"/>
+        <image name="profilePic" width="2448" height="2448"/>
     </resources>
 </document>

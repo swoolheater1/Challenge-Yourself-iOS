@@ -50,6 +50,15 @@ class WorkoutTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 0
+        default:
+            return 30
+        }
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -64,6 +73,23 @@ class WorkoutTableViewController: UITableViewController {
             let exercise = exercises[indexPath.row]
             
             if exercise.type == "Workout" {
+                let cellIdentifier = "WorkoutTableViewCell"
+                
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? WorkoutTableViewCell else {
+                    fatalError("The dequeued cell is not an instance of WorkoutTableViewCell.")
+                }
+                
+                let youtubeURL = URL(string: "https://www.youtube.com/embed/\(exercise.youtubeID)")
+                
+                cell.exerciseName.text = exercise.name
+                cell.workoutVideoWebKit.load(URLRequest(url: youtubeURL!))
+                
+                return cell
+            }
+        case 2:
+            let exercise = exercises[indexPath.row]
+            
+            if exercise.type == "Bonus" {
                 let cellIdentifier = "WorkoutTableViewCell"
                 
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? WorkoutTableViewCell else {
@@ -92,32 +118,20 @@ class WorkoutTableViewController: UITableViewController {
             // open and close cells
             if indexPath.row == selectedRowIndex.row {
                 // guard protects random crash
-                guard let row = tableView.cellForRow(at: indexPath) else { return 50 }
+                guard let row = tableView.cellForRow(at: indexPath) else { return 40 }
                 let cellHeight = row.bounds.height
                 // close open cell
                 if cellHeight == 220 {
-                    return 50
+                    return 40
                 }
                 // open closed cell
                 return 220
             }
-            return 50
+            return 40
         case 2:
-            // open and close cells
-            if indexPath.row == selectedRowIndex.row {
-                // guard protects random crash
-                guard let row = tableView.cellForRow(at: indexPath) else { return 50 }
-                let cellHeight = row.bounds.height
-                // close open cell
-                if cellHeight == 220 {
-                    return 50
-                }
-                // open closed cell
-                return 220
-            }
-            return 50
+            return 40
         default:
-            return 50
+            return 40
         }
     }
     
@@ -129,6 +143,8 @@ class WorkoutTableViewController: UITableViewController {
             selectedRowIndex = indexPath
             tableView.beginUpdates()
             tableView.endUpdates()
+            tableView.deselectRow(at: indexPath, animated: true)
+        case 2:
             tableView.deselectRow(at: indexPath, animated: true)
         default:
             return
