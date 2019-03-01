@@ -13,6 +13,7 @@ class WorkoutTableViewCell: UITableViewCell {
 
     @IBOutlet weak var exerciseName: UILabel!
     @IBOutlet weak var workoutVideoWebKit: WKWebView!
+    @IBOutlet var goal: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

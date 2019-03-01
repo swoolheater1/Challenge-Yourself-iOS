@@ -82,6 +82,7 @@ class WorkoutTableViewController: UITableViewController {
                 let youtubeURL = URL(string: "https://www.youtube.com/embed/\(exercise.youtubeID)")
                 
                 cell.exerciseName.text = exercise.name
+                cell.goal.text = "Goal: \(exercise.goal)"
                 cell.workoutVideoWebKit.load(URLRequest(url: youtubeURL!))
                 
                 return cell
@@ -115,19 +116,19 @@ class WorkoutTableViewController: UITableViewController {
         case 0:
             return 340
         case 1:
-            // open and close cells
-            if indexPath.row == selectedRowIndex.row {
-                // guard protects random crash
-                guard let row = tableView.cellForRow(at: indexPath) else { return 40 }
-                let cellHeight = row.bounds.height
-                // close open cell
-                if cellHeight == 220 {
-                    return 40
-                }
-                // open closed cell
-                return 220
-            }
-            return 40
+//            // open and close cells
+//            if indexPath.row == selectedRowIndex.row {
+//                // guard protects random crash
+//                guard let row = tableView.cellForRow(at: indexPath) else { return 40 }
+//                let cellHeight = row.bounds.height
+//                // close open cell
+//                if cellHeight == 220 {
+//                    return 40
+//                }
+//                // open closed cell
+//                return 220
+//            }
+            return 169
         case 2:
             return 40
         default:
@@ -155,22 +156,22 @@ class WorkoutTableViewController: UITableViewController {
     
     private func loadExercises() {
         guard
-            let exercise1 = Exercise(type: "Workout", name: "Mountain Climbers ~ 1 min", youtubeID: "fBZHkGT0W5Y"),
-            let exercise2 = Exercise(type: "Workout", name: "Forearm Plank ~ 1 min", youtubeID: "Zy78sjo1TZE"),
-            let exercise3 = Exercise(type: "Workout", name: "20 Sit Ups", youtubeID: "1fbU_MkV7NE"),
-            let exercise4 = Exercise(type: "Workout", name: "20 Push Ups", youtubeID: "eFOSh8vpd6I"),
-            let exercise5 = Exercise(type: "Workout", name: "20 Squats", youtubeID: "aclHkVaku9U"),
-            let exercise6 = Exercise(type: "Workout", name: "20 Tricep Dips", youtubeID: "pnt7HBOvUj8"),
-            let exercise7 = Exercise(type: "Workout", name: "Burpees ~ 1 min", youtubeID: "dZgVxmf6jkA"),
-            let exercise8 = Exercise(type: "Workout", name: "20 Lunges", youtubeID: "QOVaHwm-Q6U"),
-            let exercise9 = Exercise(type: "Workout", name: "20 Leg Lifts", youtubeID: "JB2oyawG9KI"),
-            let exercise10 = Exercise(type: "Workout", name: "20 Military Push Up", youtubeID: "cnOS4D_snr8"),
-            let exercise11 = Exercise(type: "Workout", name: "20 Glute Bridges", youtubeID: "k4BQruxcpxw"),
-            let exercise12 = Exercise(type: "Workout", name: "Superman ~ 30 sec X2", youtubeID: "VUT1RHyMEuc"),
-            let exercise13 = Exercise(type: "Workout", name: "High Plank ~ 1 min", youtubeID: "5znHfRpjczc"),
-            let exercise14 = Exercise(type: "Workout", name: "Stretch ~ 5 min", youtubeID: "2L2lnxIcNmo")
+            let exercise1 = Exercise(type: "Workout", name: "Mountain Climbers ~ 1 min", goal: "1 min", timeLimit: 1, youtubeID: "fBZHkGT0W5Y"),
+            let exercise2 = Exercise(type: "Workout", name: "Forearm Plank ~ 1 min", goal: "1 min", timeLimit: 1, youtubeID: "Zy78sjo1TZE"),
+            let exercise3 = Exercise(type: "Workout", name: "20 Sit Ups", goal: "20 Reps", timeLimit: 1, youtubeID: "1fbU_MkV7NE"),
+            let exercise4 = Exercise(type: "Workout", name: "20 Push Ups", goal: "20 Reps", timeLimit: 1, youtubeID: "eFOSh8vpd6I"),
+            let exercise5 = Exercise(type: "Workout", name: "20 Squats", goal: "20 Reps", timeLimit: 1, youtubeID: "aclHkVaku9U"),
+            let exercise6 = Exercise(type: "Workout", name: "20 Tricep Dips", goal: "20 Reps", timeLimit: 1, youtubeID: "pnt7HBOvUj8"),
+            let exercise7 = Exercise(type: "Workout", name: "Burpees ~ 1 min", goal: "1 min", timeLimit: 1, youtubeID: "dZgVxmf6jkA"),
+            let exercise8 = Exercise(type: "Workout", name: "20 Lunges", goal: "20 Reps", timeLimit: 1, youtubeID: "QOVaHwm-Q6U"),
+            let exercise9 = Exercise(type: "Workout", name: "20 Leg Lifts", goal: "20 Reps", timeLimit: 1, youtubeID: "JB2oyawG9KI"),
+            let exercise10 = Exercise(type: "Workout", name: "20 Military Push Up", goal: "20 Reps", timeLimit: 1, youtubeID: "cnOS4D_snr8"),
+            let exercise11 = Exercise(type: "Workout", name: "20 Glute Bridges", goal: "20 Reps", timeLimit: 1, youtubeID: "k4BQruxcpxw"),
+            let exercise12 = Exercise(type: "Workout", name: "Superman ~ 30 sec X2", goal: "30 sec X2", timeLimit: 1, youtubeID: "VUT1RHyMEuc"),
+            let exercise13 = Exercise(type: "Workout", name: "High Plank ~ 1 min", goal: "1 min", timeLimit: 1, youtubeID: "5znHfRpjczc"),
+            let exercise14 = Exercise(type: "Workout", name: "Stretch ~ 5 min", goal: "5 min", timeLimit: 1, youtubeID: "2L2lnxIcNmo")
             else {
-                fatalError("Unable to instantiate exersice2")
+                fatalError("Unable to instantiate exersice")
         }
         
         exercises = [exercise1, exercise2, exercise3, exercise4, exercise5,
