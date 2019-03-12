@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,27 +15,38 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge Yourself" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBs-rW-Tsa">
-                                <rect key="frame" x="116" y="323" width="143" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadScreen" translatesAutoresizingMaskIntoConstraints="NO" id="M7N-wM-Bh4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge Yourself" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBs-rW-Tsa">
+                                <rect key="frame" x="141" y="584" width="218" height="208"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jBs-rW-Tsa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d3G-dr-v7j"/>
-                            <constraint firstItem="jBs-rW-Tsa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="j7l-zZ-0ma"/>
+                            <constraint firstItem="M7N-wM-Bh4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3ff-9R-Bq2"/>
+                            <constraint firstItem="jBs-rW-Tsa" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="4tJ-Kn-p3b"/>
+                            <constraint firstItem="M7N-wM-Bh4" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="EDm-4h-58k"/>
+                            <constraint firstItem="jBs-rW-Tsa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="GXh-n7-Lad"/>
+                            <constraint firstItem="jBs-rW-Tsa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="540" id="MBa-jQ-aHE"/>
+                            <constraint firstAttribute="bottom" secondItem="jBs-rW-Tsa" secondAttribute="bottom" constant="20" symbolic="YES" id="Ojc-pa-LfX"/>
+                            <constraint firstItem="M7N-wM-Bh4" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="Vmk-e1-sz8"/>
+                            <constraint firstItem="M7N-wM-Bh4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vec-Gh-Of3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="loadScreen" width="1981" height="2926"/>
+    </resources>
 </document>

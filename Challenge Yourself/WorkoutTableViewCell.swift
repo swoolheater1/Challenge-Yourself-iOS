@@ -18,6 +18,8 @@ class WorkoutTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        workoutVideoWebKit.layer.cornerRadius = 15.0
+        workoutVideoWebKit.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

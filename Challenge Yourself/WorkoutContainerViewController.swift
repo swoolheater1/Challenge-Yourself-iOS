@@ -14,6 +14,8 @@ class WorkoutContainerViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
     
+    @IBOutlet var timerContainer: UIView!
+    
     var seconds = 0
     var timer = Timer()
     var isTimerRunning = false
@@ -26,6 +28,11 @@ class WorkoutContainerViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         pauseButton.isEnabled = false
         timerLabel.text = timeString(time: TimeInterval(seconds))
+        
+        timerContainer.layer.shadowColor = UIColor.black.cgColor
+        timerContainer.layer.shadowOffset = CGSize(width: 0, height: -5.0)
+        timerContainer.layer.shadowOpacity = 0.1
+        timerContainer.layer.shadowRadius = 3.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,8 +91,11 @@ class WorkoutContainerViewController: UIViewController {
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
+        let milliseconds = Int(time)
         
-        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+//        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        return String(format:"%02i:%02i:%02i", minutes, seconds, milliseconds)
+
     }
     
     /*
