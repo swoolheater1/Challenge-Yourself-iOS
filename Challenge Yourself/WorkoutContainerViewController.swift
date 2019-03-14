@@ -12,22 +12,21 @@ class WorkoutContainerViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet var resetButton: UIButton!
     
     @IBOutlet var timerContainer: UIView!
     
-    var seconds = 0
-    var timer = Timer()
-    var isTimerRunning = false
-    
-    var resumeTapped = false
+    weak var timer: Timer?
+    var startTime: Double = 0
+    var time: Double = 0
+    var elapsed: Double = 0
+    var status: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        pauseButton.isEnabled = false
-        timerLabel.text = timeString(time: TimeInterval(seconds))
+        resetButton.isEnabled = false
         
         timerContainer.layer.shadowColor = UIColor.black.cgColor
         timerContainer.layer.shadowOffset = CGSize(width: 0, height: -5.0)
@@ -40,64 +39,67 @@ class WorkoutContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func startButtonTapped(_ sender: UIButton) {
-        if isTimerRunning == false {
-            runTimer()
-            self.startButton.isEnabled = false
-        }
-    }
-    
-    @IBAction func pauseButtonTapped(_ sender: UIButton) {
-        if self.resumeTapped == false {
-            timer.invalidate()
-            self.resumeTapped = true
-            self.pauseButton.setTitle("Resume",for: .normal)
+    @IBAction func startStopButtonTapped(_ sender: UIButton) {
+        if (status) {
+            stop()
+            sender.setTitle("Start", for: .normal)
+            resetButton.isEnabled = true
         } else {
-            runTimer()
-            self.resumeTapped = false
-            self.pauseButton.setTitle("Pause",for: .normal)
+            start()
+            sender.setTitle("Stop", for: .normal)
+            resetButton.isEnabled = false
         }
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        timer.invalidate()
-        seconds = 0
-        timerLabel.text = timeString(time: TimeInterval(seconds))
-        isTimerRunning = false
-        pauseButton.isEnabled = false
-        startButton.isEnabled = true
-        self.resumeTapped = false
-        self.pauseButton.setTitle("Pause",for: .normal)
-    }
-    
-    func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(WorkoutContainerViewController.updateTimer)), userInfo: nil, repeats: true)
-        isTimerRunning = true
-        pauseButton.isEnabled = true
-    }
-    
-    @objc func updateTimer() {
-        if seconds >= 360000 - 1{ // will stop timer before it gets to 100 hours
-            timer.invalidate()
-            pauseButton.isEnabled = false
-        } else {
-            seconds += 1
-            timerLabel.text = timeString(time: TimeInterval(seconds))
-        }
-    }
-    
-    // Format time
-    func timeString(time:TimeInterval) -> String {
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        let milliseconds = Int(time)
+        timer?.invalidate()
         
-//        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
-        return String(format:"%02i:%02i:%02i", minutes, seconds, milliseconds)
-
+        // Reset timer variables
+        startTime = 0
+        time = 0
+        elapsed = 0
+        status = false
+        
+        // Reset timer label
+        timerLabel.text = "00:00:00"
     }
     
+    func start() {
+        startTime = Date.timeIntervalSinceReferenceDate - elapsed
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        
+        status = true
+    }
+    
+    func stop() {
+        elapsed = Date.timeIntervalSinceReferenceDate - startTime
+        timer?.invalidate()
+        
+        status = false
+    }
+    
+    @objc func updateCounter() {
+        // Calculate the total time since the timer started in seconds
+        time = Date.timeIntervalSinceReferenceDate - startTime
+        
+        // Calculate minutes
+        let minutes = Int(time / 60.0)
+        time -= (TimeInterval(minutes) * 60)
+        
+        // Calculate seconds
+        let seconds = Int(time)
+        time -= TimeInterval(seconds)
+        
+        // Calculate milliseconds
+        let milliseconds = Int(time * 100)
+        
+        // Format time
+        let timeString = String(format:"%02d:%02d:%02d", minutes, seconds, milliseconds)
+        
+        // Add time to label
+        timerLabel.text = timeString
+    }
+
     /*
     // MARK: - Navigation
 

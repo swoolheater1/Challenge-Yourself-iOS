@@ -25,7 +25,7 @@ class BioTableViewCell: UITableViewCell {
         
         profilePic.layer.cornerRadius = profilePic.frame.height/2
         profilePic.clipsToBounds = true
-        instructions.text = "Hit the goal and move to the next exercise. Try and finish the workout as fast as you can but take breaks when you need them."
+        instructions.text = "Do your best to hit the suggested goal and then move to the next exercise. Try and finish the workout as fast as you can but take breaks when you need them."
         equipment.text = "\u{2022} Yoga Mat"
         
     }

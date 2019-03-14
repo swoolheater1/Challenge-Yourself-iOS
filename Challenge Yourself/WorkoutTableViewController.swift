@@ -115,7 +115,7 @@ class WorkoutTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 275
+            return 300
         case 1:
 //            // open and close cells
 //            if indexPath.row == selectedRowIndex.row {
